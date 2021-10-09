@@ -1,0 +1,14 @@
+#!/bin/sh
+
+currentTime=`date +%k%M`
+
+check_time_to_run()
+{
+  tempTime=$1
+  if [ $tempTime -gt 900 -a $tempTime -lt 1730 ]; then
+    echo "You should be working now! Commit later."
+    exit 1
+  fi
+}
+
+check_time_to_run $currentTime
